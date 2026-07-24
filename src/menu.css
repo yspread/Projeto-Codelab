@@ -40,3 +40,59 @@ body{
     margin: 5px;
     border: 2px solid white;
 }
+
+/*Página de administrador*/
+
+body{
+    background-color: black;
+}
+.pal_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.pal_logo img{
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.pal_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pal_titulo h1{
+    color: white;
+}
+
+.pal_titulo p{
+    color: white;
+}
+
+.pal_input{
+    color: white;
+    background-color: indianred;
+    border: 1px solid indianred;
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+}
+
+.pal_input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.pal_button button{
+    color: white;
+    background-color: indianred;
+    border: 1px solid indianred;
+    border-radius: 15px;
+    padding: auto;
+    width: 100px;
+}
