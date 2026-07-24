@@ -68,16 +68,18 @@ body{
 
 .pal_titulo h1{
     color: white;
+    font-family:'Germania One';
 }
 
 .pal_titulo p{
     color: white;
+        font-family:'Germania One';
 }
 
 .pal_input{
     color: white;
-    background-color: indianred;
-    border: 1px solid indianred;
+    background-color:rgb(208, 42, 42);
+    border: 1px solid   rgb(208, 42, 42);
     border-radius: 15px;
     padding: 10px;
     width: 250px;
@@ -90,9 +92,67 @@ body{
 
 .pal_button button{
     color: white;
+    background-color: rgb(208, 42, 42);
+    border: 1px solid rgb(208, 42, 42);
+    border-radius: 15px;
+    padding: auto;
+    width: 100px;
+}
+
+/*Painel de administrador*/
+
+.pa_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pa_header{
+    background-color:rgb(208, 42, 42);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 2px solid black;
+}
+
+.pa_header_logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pa_header_logo img{
+    height: 50px;
+    width: 50px;
+}
+
+.pa_header_titulo p{
+    font-size: larger;
+}
+
+.pa_header_sair button{
+    color: white;
     background-color: indianred;
     border: 1px solid indianred;
     border-radius: 15px;
     padding: auto;
     width: 100px;
+}
+
+.pa_titulo h1{
+    color: white;
+}
+
+.pa_acao {
+    display: block;
+    padding: 20px;
+    width: 400px;
+    border: 2px solid rgb(208, 42, 42);
+    border-radius: 15px;
+    border-width: 5px;
+    text-decoration: none;
+    color: rgb(208, 42, 42);
+    text-align: center;
 }
