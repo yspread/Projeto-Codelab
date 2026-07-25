@@ -156,3 +156,44 @@ body{
     color: rgb(208, 42, 42);
     text-align: center;
 }
+
+/*novo*/
+.ai_main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+.ai_main h1{
+    color: white;
+    font-family:'Germania One';
+}
+
+.ai_campo{
+    color: white;
+    font-family:'Germania One';
+}
+
+.ai_forms {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    border: 2px solid rgb(208, 42, 42);
+    border-radius: 20px;
+}
+
+.ai_campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ai_campo label {
+    color: rgb(208, 42, 42);
+    font-weight: bold;
+}

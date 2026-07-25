@@ -24,8 +24,43 @@
         </header>
         
         <main>
-            <div class="pa_titulo">
+            <div class="ai_main">
+                <h1>Adicionar Item</h1>
 
+                <form class="ai_forms">
+
+                    <div class="ai_campo">
+                        <label for="nome">Nome do Item</label> <input type="text" name="nome" id="nome" placeholder="Ex: temaki de salmão">
+                    </div>
+
+                    <div class="ai_campo">
+                        <label for="descrição">Descrição</label> <textarea name="descrição" id="descrição" placeholder="Ex: feito de salmão"></textarea>
+                    </div>
+
+                    <div class="ai_campo">
+                        <label for="preço">Preço</label><input type="number" name="preço" id="preço" placeholder="R$0,00">
+                    </div>
+
+                    <div class="ai_campo">
+                        <label for="categoria">Categoria</label>
+                        <select name="categoria" id="categoria">
+                            <option value="">Selecione uma categoria</option>
+                            <option value="sushi">Sushi</option>
+                            <option value="temaki">Temaki</option>
+                            <option value="porcao">Porção</option>
+                            <option value="bebida">Bebida</option>
+                        </select>
+                    </div>
+
+                    <div class="ai_campo">
+                        <label for="imagem">Imagem</label> <input type="file" name="imagem" id="imagem" accept="image/*">
+                    </div>
+
+                    <div ai_botao>
+                        <button type="submit">Adicionar Item</button>
+                    </div>
+
+                </form>
             </div>
         
         </main>
