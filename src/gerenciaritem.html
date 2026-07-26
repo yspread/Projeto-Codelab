@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Gerenciar Item</title>
+        <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg">
+        <link rel="stylesheet" href="menu.css">
+        <link href="https://fonts.googleapis.com/css?family=Germania One" rel="stylesheet">
+    </head>
+    <body>
+        <header class="pa_header">
+            <div class="pa_header_logo">
+                <img src="../imgs/chingchong.jpeg" alt="Logo">
+                <p>Ching Chong Sushi</p>
+            </div>
+
+            <div class="pa_header_titulo">
+                <p>Gerenciar Item</p>
+            </div>
+
+            <div class="pa_header_sair">
+                <a href="paineladm.html">Voltar</a>
+            </div>
+        </header>
+        
+         <main class="ei_main">
+            <section class="ei_busca">
+                <label for="buscar-item">Buscar item</label>
+
+                <input
+                    type="text"
+                    id="buscar-item"
+                    placeholder="Digite o nome do item"
+                >
+            </section>
+
+            <section class="ei_lista">
+                <article class="ei_card">
+                    <div class="ei_card_imagem">
+                        <img
+                            src="../imgs/temaki.jpeg"
+                            alt="Temaki de salmão"
+                        >
+                    </div>
+
+                    <div class="ei_card_informacoes">
+                        <h2>Temaki de salmão</h2>
+
+                        <p class="ei_descricao">
+                            Salmão, arroz japonês, cebolinha e cream cheese.
+                        </p>
+
+                        <p class="ei_categoria">
+                            Categoria: Temakis
+                        </p>
+
+                        <p class="ei_preco">
+                            R$ 24,90
+                        </p>
+                    </div>
+
+                    <div class="ei_card_acoes">
+                        <a href="editar-item.html" class="ei_editar">
+                            Editar
+                        </a>
+
+                        <button type="button" class="ei_remover">
+                            Remover
+                        </button>
+                    </div>
+                </article>
+
+                <article class="ei_card">
+                    <div class="ei_card_imagem">
+                        <img
+                            src="../imgs/hot-roll.jpeg"
+                            alt="Porção de hot roll"
+                        >
+                    </div>
+
+                    <div class="ei_card_informacoes">
+                        <h2>Hot roll</h2>
+
+                        <p class="ei_descricao">
+                            Porção de sushi empanado com salmão e cream cheese.
+                        </p>
+
+                        <p class="ei_categoria">
+                            Categoria: Porções
+                        </p>
+
+                        <p class="ei_preco">
+                            R$ 29,90
+                        </p>
+                    </div>
+
+                    <div class="ei_card_acoes">
+                        <a href="editar-item.html" class="ei_editar">
+                            Editar
+                        </a>
+
+                        <button type="button" class="ei_remover">
+                            Remover
+                        </button>
+                    </div>
+                </article>
+
+                <article class="ei_card">
+                    <div class="ei_card_imagem">
+                        <img
+                            src="../imgs/yakisoba.jpeg"
+                            alt="Yakisoba"
+                        >
+                    </div>
+
+                    <div class="ei_card_informacoes">
+                        <h2>Yakisoba</h2>
+
+                        <p class="ei_descricao">
+                            Macarrão oriental, legumes e carne ao molho.
+                        </p>
+
+                        <p class="ei_categoria">
+                            Categoria: Pratos quentes
+                        </p>
+
+                        <p class="ei_preco">
+                            R$ 35,00
+                        </p>
+                    </div>
+
+                    <div class="ei_card_acoes">
+                        <a href="editar-item.html" class="ei_editar">
+                            Editar
+                        </a>
+
+                        <button type="button" class="ei_remover">
+                            Remover
+                        </button>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

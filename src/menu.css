@@ -48,3 +48,307 @@ hr{
     border: 2px solid white;
 
 }
+
+/*Página de administrador*/
+
+body{
+    background-color: black;
+}
+.pal_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.pal_logo img{
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.pal_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pal_titulo h1{
+    color: white;
+    font-family:'Germania One';
+}
+
+.pal_titulo p{
+    color: white;
+        font-family:'Germania One';
+}
+
+.pal_input{
+    color: white;
+    background-color:rgb(208, 42, 42);
+    border: 1px solid   rgb(208, 42, 42);
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+}
+
+.pal_input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.pal_button button{
+    color: white;
+    background-color: rgb(208, 42, 42);
+    border: 1px solid rgb(208, 42, 42);
+    border-radius: 15px;
+    padding: auto;
+    width: 100px;
+}
+
+/*Painel de administrador*/
+
+.pa_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pa_header{
+    background-color:rgb(208, 42, 42);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 2px solid black;
+}
+
+.pa_header_logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pa_header_logo img{
+    height: 50px;
+    width: 50px;
+}
+
+.pa_header_titulo p{
+    font-size: larger;
+}
+
+.pa_header_sair button{
+    color: white;
+    background-color: indianred;
+    border: 1px solid indianred;
+    border-radius: 15px;
+    padding: auto;
+    width: 100px;
+}
+
+.pa_titulo h1{
+    color: white;
+}
+
+.pa_acao {
+    display: block;
+    padding: 20px;
+    width: 400px;
+    border: 2px solid rgb(208, 42, 42);
+    border-radius: 15px;
+    border-width: 5px;
+    text-decoration: none;
+    color: rgb(208, 42, 42);
+    text-align: center;
+}
+
+/*Painel admnistrador-adicionar item*/
+.ai_main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+.ai_main h1{
+    color: white;
+    font-family:'Germania One';
+}
+
+.ai_campo{
+    color: white;
+    font-family:'Germania One';
+}
+
+.ai_forms {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    border: 2px solid rgb(208, 42, 42);
+    border-radius: 20px;
+}
+
+.ai_campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ai_campo label {
+    color: rgb(208, 42, 42);
+    font-weight: bold;
+}
+
+/*Painel admnistrador-editar item*/
+
+.ei_main h1{
+    color: white;
+}
+
+.ei_main {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+}
+
+.ei_busca {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+.ei_busca label {
+    color: rgb(208, 42, 42);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ei_busca input {
+    width: 100%;
+    padding: 13px;
+
+    border: 2px solid rgb(208, 42, 42);
+    border-radius: 12px;
+
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.ei_busca input::placeholder {
+    color: #b87878;
+    opacity: 1;
+}
+
+.ei_busca input:focus {
+    outline: none;
+    border-color: #8f3030;
+}
+
+.ei_lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ei_card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: white;
+    border: 2px solid indianred;
+    border-radius: 18px;
+}
+
+.ei_card_imagem img {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.ei_card_informacoes {
+    flex: 1;
+}
+
+.ei_card_informacoes h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    color: rgb(208, 42, 42);
+    font-family: "Germania One", serif;
+}
+
+.ei_descricao {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.ei_categoria {
+    margin-bottom: 8px;
+    color: #704545;
+}
+
+.ei_preco {
+    margin: 0;
+
+    color:rgb(208, 42, 42);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ei_card_acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ei_editar, .ei_remover {
+    width: 110px;
+    padding: 10px;
+
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+.ei_editar {
+    color: white;
+    background-color: rgb(208, 42, 42);
+    border: 2px solid rgb(208, 42, 42);
+
+    text-decoration: none;
+}
+
+.ei_editar:hover {
+    background-color: #9f3f3f;
+}
+
+.ei_remover {
+    color: rgb(208, 42, 42);
+    background-color: white;
+    border: 2px solid rgb(208, 42, 42);
+}
+
+.ei_remover:hover {
+    color: white;
+    background-color: rgb(208, 42, 42);
+}
