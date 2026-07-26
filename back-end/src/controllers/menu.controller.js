@@ -13,7 +13,7 @@ const menuService = require("../services/menu.service");
 
 async function listarCardapio (req, res){
   const menu = await menuService.lerMenu();
-  res.json(menu);
+  return res.json(menu);
 };
 
 async function buscarPorId (req, res){
@@ -25,8 +25,8 @@ async function buscarPorId (req, res){
   }
   const item = await menuService.buscarPorId(id);
   if(!item){
-    res.status(404).json({
-      erro: "Item não encontrado"
+    return res.status(404).json({
+      erro: "Item não encontrado."
     });
   }
 
@@ -41,8 +41,37 @@ async function criar(req, res) {
   return res.status(201).json(itemCriado);
 }
 
+async function deletar(req, res) {
+  const id = Number(req.params.id);
+
+  if(await menuService.deletarItem(id)){
+    return res.status(204).send();
+  } else{
+    return res.status(404).json({
+      erro: "Item não encontrado."
+    })
+  }
+}
+
+async function editar(req, res) {
+  const id = Number(req.params.id);
+  const novosDados = req.body;
+  
+  const itemEditado = await menuService.editarItem(id, novosDados);
+
+  if(!itemEditado){
+    return res.status(404).json({
+      erro: "Item não encontrado."
+    });
+  }
+
+  return res.status(200).json(itemEditado);
+}
+
 module.exports = {
   listarCardapio,
   buscarPorId,
-  criar
+  criar,
+  deletar,
+  editar
 };

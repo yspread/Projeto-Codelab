@@ -23,4 +23,8 @@ router.get("/", menuController.listarCardapio);
 router.get("/:id", menuController.buscarPorId);
 
 router.post("/", menuController.criar);
+
+router.delete("/:id", menuController.deletar);
+
+router.put("/:id", menuController.editar);
 module.exports = router;
