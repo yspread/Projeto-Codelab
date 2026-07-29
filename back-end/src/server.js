@@ -8,6 +8,7 @@
 const cors = require("cors")
 const express = require("express");
 const menuRoutes = require("./routes/menu.routes");
+const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 //Rotas
 app.use("/menu", menuRoutes);
+app.use("/auth", authRoutes);
 
 app.listen(3000, () => {
   console.log("server rodando port 3000");

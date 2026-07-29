@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Página Administrador</title>
+    <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg" />
+    <link rel="stylesheet" href="menu.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Germania One"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- pal = pagina de adminstrador login-->
+    <main>
+      <div class="pal_main">
+        <div class="pal_logo">
+          <img src="../imgs/chingchong.jpeg" alt="Logo do Restaurante" />
+        </div>
+
+        <div class="pal_titulo">
+          <h1>Painel Administrador</h1>
+          <p>Faça login</p>
+        </div>
+        <form id="form-login">
+          <div class="pal_user">
+            <input
+              type="text"
+              placeholder="Usuário"
+              class="pal_input"
+              id="usuario"
+            />
+          </div>
+
+          <div class="pal_password">
+            <input
+              type="password"
+              placeholder="Senha"
+              class="pal_input"
+              id="senha"
+            />
+          </div>
+
+          <div type="submit" class="pal_button">
+            <button>Entrar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script type="module" src="../scripts/login.js"></script>
+  </body>
+</html>

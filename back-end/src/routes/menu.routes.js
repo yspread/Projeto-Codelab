@@ -16,15 +16,15 @@
 
 const express = require("express");
 const router = express.Router();
-
+const authMiddleware = require("../middlewares/auth.middleware");
 const menuController = require("../controllers/menu.controller");
 
 router.get("/", menuController.listarCardapio);
 router.get("/:id", menuController.buscarPorId);
 
-router.post("/", menuController.criar);
+router.post("/", authMiddleware, menuController.criar);
 
-router.delete("/:id", menuController.deletar);
+router.delete("/:id", authMiddleware, menuController.deletar);
 
-router.put("/:id", menuController.editar);
+router.put("/:id", authMiddleware, menuController.editar);
 module.exports = router;
