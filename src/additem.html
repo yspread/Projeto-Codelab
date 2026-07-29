@@ -1,68 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Adicionar Item</title>
-        <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg">
-        <link rel="stylesheet" href="menu.css">
-        <link href="https://fonts.googleapis.com/css?family=Germania One" rel="stylesheet">
-    </head>
-    <body>
-        <header class="pa_header">
-            <div class="pa_header_logo">
-                <img src="../imgs/chingchong.jpeg" alt="Logo">
-                <p>Ching Chong Sushi</p>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adicionar Item</title>
+    <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg" />
+    <link rel="stylesheet" href="menu.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Germania One"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="pa_header">
+      <div class="pa_header_logo">
+        <img src="../imgs/chingchong.jpeg" alt="Logo" />
+        <p>Ching Chong Sushi</p>
+      </div>
 
-            <div class="pa_header_titulo">
-                <p>Adicionar Item</p>
-            </div>
+      <div class="pa_header_titulo">
+        <p>Adicionar Item</p>
+      </div>
 
-            <div class="pa_header_sair">
-                <a href="paineladm.html">Voltar</a>
-            </div>
-        </header>
-        
-        <main>
-            <div class="ai_main">
-                <h1>Adicionar Item</h1>
+      <div class="pa_header_sair">
+        <a href="paineladm.html">Voltar</a>
+      </div>
+    </header>
 
-                <form class="ai_forms">
+    <main>
+      <div class="ai_main">
+        <h1>Adicionar Item</h1>
 
-                    <div class="ai_campo">
-                        <label for="nome">Nome do Item</label> <input type="text" name="nome" id="nome" placeholder="Ex: temaki de salmão">
-                    </div>
+        <form class="ai_forms" id="form-adicionar-item">
+          <div class="ai_campo">
+            <label for="nome">Nome do Item</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Ex: temaki de salmão"
+            />
+          </div>
 
-                    <div class="ai_campo">
-                        <label for="descrição">Descrição</label> <textarea name="descrição" id="descrição" placeholder="Ex: feito de salmão"></textarea>
-                    </div>
+          <div class="ai_campo">
+            <label for="descrição">Descrição</label>
+            <textarea
+              name="descrição"
+              id="descricao"
+              placeholder="Ex: feito de salmão"
+            ></textarea>
+          </div>
 
-                    <div class="ai_campo">
-                        <label for="preço">Preço</label><input type="number" name="preço" id="preço" placeholder="R$0,00">
-                    </div>
+          <div class="ai_campo">
+            <label for="preço">Preço</label
+            ><input
+              type="number"
+              name="preço"
+              id="preco"
+              step="0.01"
+              placeholder="R$0,00"
+            />
+          </div>
 
-                    <div class="ai_campo">
-                        <label for="categoria">Categoria</label>
-                        <select name="categoria" id="categoria">
-                            <option value="">Selecione uma categoria</option>
-                            <option value="sushi">Sushi</option>
-                            <option value="temaki">Temaki</option>
-                            <option value="porcao">Porção</option>
-                            <option value="bebida">Bebida</option>
-                        </select>
-                    </div>
+          <div class="ai_campo">
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria">
+              <option value="">Selecione uma categoria</option>
+              <option value="sushi">Sushi</option>
+              <option value="temaki">Temaki</option>
+              <option value="porcao">Porção</option>
+              <option value="bebida">Bebida</option>
+            </select>
+          </div>
 
-                    <div class="ai_campo">
-                        <label for="imagem">Imagem</label> <input type="file" name="imagem" id="imagem" accept="image/*">
-                    </div>
+          <div class="ai_campo">
+            <label for="imagem">Imagem</label>
+            <input type="file" name="imagem" id="imagem" accept="image/*" />
+          </div>
 
-                    <div ai_botao>
-                        <button type="submit">Adicionar Item</button>
-                    </div>
-
-                </form>
-            </div>
-        
-        </main>
-    </body>
+          <div ai_botao>
+            <button type="submit">Adicionar Item</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script type="module" src="../scripts/additem.js"></script>
+  </body>
 </html>

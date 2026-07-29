@@ -5,13 +5,14 @@
 *   services: Realiza as operações da aplicação
 *   database: Armazena os dados em um JSON local
 */
-
+const cors = require("cors")
 const express = require("express");
 const menuRoutes = require("./routes/menu.routes");
 
 const app = express();
 
 // Middlewares
+app.use(cors()); //Limitar o acesso para o front(futuro)
 app.use(express.json());
 
 //Rotas

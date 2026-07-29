@@ -3,5 +3,12 @@
     "id": 0,
     "nome": "Licensed Cotton Towels",
     "preco": 304.83
+  },
+  {
+    "id": 1,
+    "nome": "Temaki de Salmão",
+    "descricao": "feito de salmao",
+    "preco": 10,
+    "categoria": "temaki"
   }
 ]
