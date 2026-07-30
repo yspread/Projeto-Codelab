@@ -1,11 +1,14 @@
 const API_URL = "http://localhost:3000";
 
 export async function criarItem(item) {
+  const token = localStorage.getItem("token");
+  
   const resposta = await fetch(`${API_URL}/menu`,{
     method: "POST",
 
     headers:{
-      "Content-Type":"application/json"
+      "Content-Type":"application/json",
+      "Authorization": `Bearer ${token}`
     },
     
     body: JSON.stringify(item)
@@ -25,5 +28,14 @@ export async function login(usuario, senha) {
       usuario,
       senha
     })
+  });
+}
+
+export async function verificarToken(token) {
+  return fetch(`${API_URL}/auth/verificar`,{
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization": `Bearer ${token}`
+    },
   });
 }

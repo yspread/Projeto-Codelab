@@ -16,6 +16,13 @@ async function login(req, res) {
   });
 }
 
+function verificar(req, res) {
+    return res.status(200).json({
+        mensagem: "Token válido."
+    });
+}
+
 module.exports = {
-  login
+  login,
+  verificar
 };

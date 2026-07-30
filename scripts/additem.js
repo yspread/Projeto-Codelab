@@ -6,7 +6,6 @@ formulario.addEventListener("submit", cadastrarItem);
 
 async function cadastrarItem(event) {
   event.preventDefault(); // Impede a página de recarregar
-  console.log("Forms enviado")
   const item = {
     nome: document.getElementById("nome").value,
     descricao: document.getElementById("descricao").value,
@@ -17,7 +16,7 @@ async function cadastrarItem(event) {
   const resposta = await criarItem(item);
 
   if(!resposta.ok){
-    alert("Erro ao cadastram item.");
+    alert("Erro ao cadastrar item.");
     return;
   }
   alert("Item cadastrado com sucesso!");
