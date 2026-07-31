@@ -1,108 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Editar Item</title>
+        <title>Editar Item</title>
 
-    <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg" />
-    <link rel="stylesheet" href="menu.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Germania+One"
-      rel="stylesheet"
-    />
-  </head>
+        <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg">
+        <link rel="stylesheet" href="menu.css">
+        <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+    </head>
 
-  <body>
-    <script type="module" src="../scripts/auth.js"></script>
+    <body>
+        <header class="pa_header">
+            <div class="pa_header_logo">
+                <img src="../imgs/chingchong.jpeg" alt="Logo">
+                <p>Ching Chong Sushi</p>
+            </div>
 
-    <header class="pa_header">
-      <div class="pa_header_logo">
-        <img src="../imgs/chingchong.jpeg" alt="Logo" />
-        <p>Ching Chong Sushi</p>
-      </div>
+            <div class="pa_header_titulo">
+                <p>Editar Item</p>
+            </div>
 
-      <div class="pa_header_titulo">
-        <p>Editar Item</p>
-      </div>
+            <div class="pa_header_sair">
+                <a href="gerenciaritem.html">Voltar</a>
+            </div>
+        </header>
 
-      <div class="pa_header_sair">
-        <a href="gerenciar-itens.html">Voltar</a>
-      </div>
-    </header>
+        <main>
+            <div class="ai_main">
+                <h1>Editar Item</h1>
 
-    <main>
-      <div class="ai_main">
-        <h1>Editar Item</h1>
+                <form class="ai_forms">
+                    <div class="ai_campo">
+                        <label for="nome">Nome do item</label>
 
-        <form class="ai_forms">
-          <div class="ai_campo">
-            <label for="nome">Nome do item</label>
+                        <input
+                            type="text"
+                            name="nome"
+                            id="nome"
+                            value="Temaki de salmão"
+                            required
+                        >
+                    </div>
 
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              value="Temaki de salmão"
-              required
-            />
-          </div>
+                    <div class="ai_campo">
+                        <label for="descricao">Descrição</label>
 
-          <div class="ai_campo">
-            <label for="descricao">Descrição</label>
+                        <textarea
+                            name="descricao"
+                            id="descricao"
+                            required
+                        >Feito com salmão, arroz japonês e cream cheese.</textarea>
+                    </div>
 
-            <textarea name="descricao" id="descricao" required>
-Feito com salmão, arroz japonês e cream cheese.</textarea
-            >
-          </div>
+                    <div class="ai_campo">
+                        <label for="preco">Preço</label>
 
-          <div class="ai_campo">
-            <label for="preco">Preço</label>
+                        <input
+                            type="number"
+                            name="preco"
+                            id="preco"
+                            value="24.90"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+                    </div>
 
-            <input
-              type="number"
-              name="preco"
-              id="preco"
-              value="24.90"
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
+                    <div class="ai_campo">
+                        <label for="categoria">Categoria</label>
 
-          <div class="ai_campo">
-            <label for="categoria">Categoria</label>
+                        <select name="categoria" id="categoria" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="destaques">Destaques</option> 
+                            <option value="carpaccios">Carpaccios</option>
+                            <option value="sushis">Sushi</option>
+                            <option value="sashimis">Sashimis</option>
+                            <option value="temakis">Temakis</option>
+                            <option value="fritos">Fritos</option>
+                            <option value="sobremesas">Sobremesas</option> 
+                            <option value="bebidas">Bebidas</option>       
+                        </select>
+                    </div>
 
-            <select name="categoria" id="categoria" required>
-              <option value="">Selecione uma categoria</option>
-              <option value="sushi">Sushi</option>
-              <option value="temaki" selected>Temaki</option>
-              <option value="porcao">Porção</option>
-              <option value="bebida">Bebida</option>
-            </select>
-          </div>
+                    <div class="ai_campo">
+                        <label>Imagem atual</label>
+                        <img
+                            src="../imgs/temaki.jpeg"
+                            alt="Imagem atual do temaki de salmão"
+                            class="ai_imagem_atual"
+                        >
+                    </div>
 
-          <div class="ai_campo">
-            <label>Imagem atual</label>
-            <img
-              src="../imgs/temaki.jpeg"
-              alt="Imagem atual do temaki de salmão"
-              class="ai_imagem_atual"
-            />
-          </div>
+                    <div class="ai_campo">
+                        <label for="imagem">Trocar imagem</label>
 
-          <div class="ai_campo">
-            <label for="imagem">Trocar imagem</label>
+                        <input
+                            type="file"
+                            name="imagem"
+                            id="imagem"
+                            accept="image/*"
+                        >
+                    </div>
 
-            <input type="file" name="imagem" id="imagem" accept="image/*" />
-          </div>
-
-          <div class="ai_botao">
-            <button type="submit">Salvar alterações</button>
-          </div>
-        </form>
-      </div>
-    </main>
-  </body>
+                    <div class="ai_botao">
+                        <button type="submit">Salvar alterações</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
 </html>

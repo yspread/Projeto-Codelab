@@ -11,8 +11,6 @@
     />
   </head>
   <body>
-    <script type="module" src="../scripts/additem.js"></script>
-    <script type="module" src="../scripts/auth.js"></script>
     <header class="pa_header">
       <div class="pa_header_logo">
         <img src="../imgs/chingchong.jpeg" alt="Logo" />
@@ -67,10 +65,14 @@
             <label for="categoria">Categoria</label>
             <select name="categoria" id="categoria">
               <option value="">Selecione uma categoria</option>
-              <option value="sushi">Sushi</option>
-              <option value="temaki">Temaki</option>
-              <option value="porcao">Porção</option>
-              <option value="bebida">Bebida</option>
+              <option value="destaques">Destaques</option> 
+              <option value="carpaccios">Carpaccios</option>
+              <option value="sushis">Sushi</option>
+              <option value="sashimis">Sashimis</option>
+              <option value="temakis">Temakis</option>
+              <option value="fritos">Fritos</option>
+              <option value="sobremesas">Sobremesas</option> 
+              <option value="bebidas">Bebidas</option>             
             </select>
           </div>
 
@@ -79,11 +81,12 @@
             <input type="file" name="imagem" id="imagem" accept="image/*" />
           </div>
 
-          <div ai_botao>
+          <div class="ai_botao">
             <button type="submit">Adicionar Item</button>
           </div>
         </form>
       </div>
     </main>
+    <script type="module" src="../scripts/additem.js"></script>
   </body>
 </html>
