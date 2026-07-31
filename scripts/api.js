@@ -1,3 +1,5 @@
+//Conexão com os endpoints
+
 const API_URL = "http://localhost:3000";
 
 export async function criarItem(item) {

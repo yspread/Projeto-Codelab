@@ -1,3 +1,5 @@
+//Gera Card para exibição de itens no cardápio, caso a flag admin seja true, exibe os botões de ação
+
 export function criarCard(item, admin){
   const card = document.createElement("article");
 

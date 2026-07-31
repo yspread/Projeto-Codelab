@@ -1,3 +1,5 @@
+//Script para criação de item
+
 import { criarItem } from "./api.js";
 
 const formulario = document.getElementById("form-adicionar-item");

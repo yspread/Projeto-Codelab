@@ -1,3 +1,5 @@
+//Proteção das paginas administrativas
+
 import { verificarToken } from "./api.js";
 
 const token = localStorage.getItem("token");
