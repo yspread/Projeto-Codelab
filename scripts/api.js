@@ -39,3 +39,7 @@ export async function verificarToken(token) {
     },
   });
 }
+
+export async function buscaMenu() {
+  return fetch(`${API_URL}/menu`);
+}
