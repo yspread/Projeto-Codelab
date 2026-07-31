@@ -6,14 +6,36 @@ formulario.addEventListener("submit", cadastrarItem);
 
 async function cadastrarItem(event) {
   event.preventDefault(); // Impede a página de recarregar
-  const item = {
-    nome: document.getElementById("nome").value,
-    descricao: document.getElementById("descricao").value,
-    preco: Number(document.getElementById("preco").value),
-    categoria: document.getElementById("categoria").value,
-  }
+  const formData = new FormData();
+    formData.append(
+      "nome",
+      document.getElementById("nome").value
+    );
 
-  const resposta = await criarItem(item);
+    formData.append(
+      "descricao",
+      document.getElementById("descricao").value
+    );
+
+    formData.append(
+      "preco",
+      Number(document.getElementById("preco").value)
+    );
+
+    formData.append(
+      "categoria",
+      document.getElementById("categoria").value
+    );
+
+
+    const imagem = document.getElementById("imagem").files[0];
+
+    formData.append(
+      "imagem",
+      imagem
+    );
+
+  const resposta = await criarItem(formData);
 
   if(!resposta.ok){
     alert("Erro ao cadastrar item.");

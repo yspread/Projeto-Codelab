@@ -7,6 +7,7 @@
 */
 const cors = require("cors")
 const express = require("express");
+const fileupload = require("express-fileupload");
 const menuRoutes = require("./routes/menu.routes");
 const authRoutes = require("./routes/auth.routes");
 
@@ -15,6 +16,8 @@ const app = express();
 // Middlewares
 app.use(cors()); //Limitar o acesso para o front(futuro)
 app.use(express.json());
+app.use(fileupload());
+app.use("/uploads", express.static("./src/uploads"));
 
 //Rotas
 app.use("/menu", menuRoutes);

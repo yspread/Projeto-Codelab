@@ -7,11 +7,10 @@ export async function criarItem(item) {
     method: "POST",
 
     headers:{
-      "Content-Type":"application/json",
       "Authorization": `Bearer ${token}`
     },
     
-    body: JSON.stringify(item)
+    body: item
   });
   return resposta;
 }

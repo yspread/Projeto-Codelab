@@ -34,7 +34,16 @@ async function buscarPorId (req, res){
 }
 
 async function criar(req, res) {
-  const novoItem = req.body;
+  const imagem = req.files.imagem;
+
+  const nomeImagem = Date.now() + "-" + imagem.name;
+
+  await imagem.mv(`./src/uploads/${nomeImagem}`);
+
+  const novoItem = {
+    ...req.body,
+    imagem: nomeImagem
+  };
 
   const itemCriado = await menuService.criarItem(novoItem);
 

@@ -1,21 +1,10 @@
 [
   {
     "id": 0,
-    "nome": "Licensed Cotton Towels",
-    "preco": 304.83
-  },
-  {
-    "id": 1,
-    "nome": "Temaki de Peixe branco",
-    "descricao": "Prego",
-    "preco": 10,
-    "categoria": "temaki"
-  },
-  {
-    "id": 2,
-    "nome": "Temaki",
-    "descricao": "temaki",
-    "preco": 1,
-    "categoria": "temaki"
+    "nome": "Temaki de Salmão",
+    "descricao": "Salmão, arroz japonês, cebolinha e cream cheese",
+    "preco": "24.9",
+    "categoria": "temakis",
+    "imagem": "1785459605584-hot-roll.jpeg"
   }
 ]
