@@ -1,26 +1,26 @@
-.card{
-    width: 200px;
-    background-color:black;
-    height: 300px;
-    margin: 20px;
-    border-radius: 15px;
-    border: 2px solid white;
-}
-
 #logo{
     float: left;
     width: 80px;
     height: 80px;
     margin: 8px;
     margin-right: 15px;
+    margin-top: 16px;
 }
 
 #sushis, #carpaccios, #destaques, #sobremesas, #fritos, #bebidas, #temakis, #sashimis{
-     scroll-margin-top: 80px;
+    scroll-margin-top: 80px;
+    text-align:center;
 }
 
 p{
     color: white;
+}
+
+.right-header{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: right;
+    flex: 0 0 auto;
 }
 
 header{
@@ -37,11 +37,10 @@ header{
 
 .flex-item{
     flex: 0 0 auto;   
-    width: auto;
+    width: 300px;
 }
 
-
-button{
+button, .voltar{
     background-color: rgb(208, 42, 42);
     border: 2px solid white;
     border-radius: 15px;
@@ -51,25 +50,18 @@ button{
     cursor: pointer;
     white-space: nowrap;
     flex-shrink: 0;   
+    font-size: 25px;
+    text-decoration:none;
 }
 
-button:hover{
+button:hover, .voltar:hover{
     background-color: rgb(125, 25, 25);
 }
 
 #nromesa{
     background-color: black;
-    border: 2px solid rgb(208, 42, 42);
-    border-radius: 15px;
     padding: 8px 18px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    align-self: center;
-    font-size: 16px;  
-}
-
-button{
-    float: right;
+    font-size: 16px;
 }
 
 h1, h2, h3{
@@ -112,11 +104,28 @@ hr{
 }
 .navbar li{
     float: left;
+    font-family: 'Germania One';
     background-color:rgb(208, 42, 42);
     border-radius: 15px;
     margin: 5px;
     border: 2px solid white;
 
+}
+/*Cozinha*/
+
+#pedidos-recebidos{
+    text-align: center;
+}
+
+#cozinha{
+    border: 2px solid red;
+    border-radius: 15px;
+    width: 100px;
+    padding: 10px;
+}
+
+.right-item{
+    text-align: right;
 }
 
 /*Página de administrador*/

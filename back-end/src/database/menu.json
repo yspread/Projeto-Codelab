@@ -6,5 +6,21 @@
     "preco": "24.9",
     "categoria": "temakis",
     "imagem": "1785459605584-hot-roll.jpeg"
+  },
+  {
+    "id": 1,
+    "nome": "temaki de salmão",
+    "descricao": "feito de salmão",
+    "preco": "33",
+    "categoria": "temakis",
+    "imagem": "1785601093349-Captura de tela 2025-05-25 235108.png"
+  },
+  {
+    "id": 2,
+    "nome": "temaki de salmão",
+    "descricao": "feito de salmão",
+    "preco": "33",
+    "categoria": "temakis",
+    "imagem": "1785601098308-Captura de tela 2025-05-25 235108.png"
   }
 ]
