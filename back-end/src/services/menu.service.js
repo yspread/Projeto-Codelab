@@ -30,7 +30,6 @@ async function buscarPorId(id) {
 async function criarItem(item) {
   const menu = await lerMenu();
   const novoId = Math.max(-1, ...menu.map(item => item.id)) + 1; // Caso o menu esteja vazio -1 + 1 = 0(primeiro ID)
-  console.log(novoId)
   const novoItem = {
     id: novoId,
     ...item
@@ -43,7 +42,7 @@ async function criarItem(item) {
   return novoItem;
 }
 
-async function deletarItem(id, novosDados){
+async function deletarItem(id){
   const menu = await lerMenu();
   const item = await buscarPorId(id);
 

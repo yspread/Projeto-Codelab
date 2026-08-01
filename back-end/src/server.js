@@ -6,10 +6,12 @@
 *   database: Armazena os dados em um JSON local
 */
 const cors = require("cors")
+const path = require("path");
 const express = require("express");
 const fileupload = require("express-fileupload");
 const menuRoutes = require("./routes/menu.routes");
 const authRoutes = require("./routes/auth.routes");
+const pedidosRoutes = require("./routes/pedidos.routes")
 
 const app = express();
 
@@ -22,6 +24,7 @@ app.use("/uploads", express.static("./src/uploads"));
 //Rotas
 app.use("/menu", menuRoutes);
 app.use("/auth", authRoutes);
+app.use("/pedidos", pedidosRoutes)
 
 app.listen(3000, () => {
   console.log("server rodando port 3000");
