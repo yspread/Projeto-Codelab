@@ -417,17 +417,17 @@ body{
     font-family: "Germania One", serif;
 }
 
-.ei_descricao {
+.ei_descricao{
     margin-bottom: 10px;
     color: whitesmoke;
 }
 
-.ei_categoria {
+.ei_categoria, .quantidade_pedido{
     margin-bottom: 8px;
     color: white;
 }
 
-.ei_preco {
+.ei_preco, .mesa_pedido {
     margin: 0;
 
     color:white;

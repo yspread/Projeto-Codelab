@@ -20,8 +20,23 @@
                 <a class="voltar" href="paineladm.html"> Voltar </a>
             </div>
         </header>
-
         <hr>
-        <h1 id="pedidos-recebidos"> ~Pedidos Recebidos~ </h1>
+            <main class="ei_main">
+            <h1 id="pedidos-recebidos"> ~Pedidos Recebidos~ </h1>
+            <div class="ei_card_imagem">
+            <img src="../back-end/src/uploads/${item.imagem}" alt="${item.nome}">
+            </div>
+
+            <!-- Card -->
+            <article class="ei_card">
+                <div class="ei_card_informacoes">
+                    <h2 class="item_pedido"> Temaki </h2>
+
+                    <p class="quantidade_pedido"> Quantidade: 10 </p>
+
+                    <p class="mesa_pedido"> Mesa: 67</p>
+                </div>
+            </article>
+        </main>
     </body> 
 </html>

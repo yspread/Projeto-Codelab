@@ -22,5 +22,29 @@
     "preco": "33",
     "categoria": "temakis",
     "imagem": "1785601098308-Captura de tela 2025-05-25 235108.png"
+  },
+  {
+    "id": 3,
+    "nome": "bumbum",
+    "descricao": "bumbum",
+    "preco": "69",
+    "categoria": "destaques",
+    "imagem": "1785608613302-Captura de tela 2025-05-25 235108.png"
+  },
+  {
+    "id": 4,
+    "nome": "bumbum",
+    "descricao": "bumbum",
+    "preco": "69",
+    "categoria": "destaques",
+    "imagem": "1785608614569-Captura de tela 2025-05-25 235108.png"
+  },
+  {
+    "id": 5,
+    "nome": "bumbum",
+    "descricao": "bumbum",
+    "preco": "69",
+    "categoria": "destaques",
+    "imagem": "1785608615709-Captura de tela 2025-05-25 235108.png"
   }
 ]
