@@ -20,7 +20,13 @@ async function deletar(req, res) {
   }
 }
 
+async function listar(req, res) {
+  const listaPedidos = await pedidosServices.lerPedidos();
+  return res.json(listaPedidos);
+}
+
 module.exports = {
   criar,
-  deletar
+  deletar,
+  listar
 }

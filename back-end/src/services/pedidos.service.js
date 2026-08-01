@@ -48,5 +48,6 @@ async function deletarPedido(id) {
 }
 module.exports = {
   criarPedido,
-  deletarPedido
-}
+  deletarPedido,
+  lerPedidos
+};
