@@ -14,3 +14,17 @@ export async function carregarItens(lista, admin) {
     lista.appendChild(card);
   }
 }
+
+export async function carregarfiltrado(lista, admin, categoria) {
+  const resposta = await buscaMenu();
+  const menu = await resposta.json();
+  const itens = await menu.filter(item => item.categoria === categoria);
+  
+  lista.innerHTML = "";
+
+  for(const item of itens){
+    const card = criarCard(item, admin);
+
+    lista.appendChild(card);
+  }
+}

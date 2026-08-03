@@ -44,3 +44,16 @@ export async function verificarToken(token) {
 export async function buscaMenu() {
   return fetch(`${API_URL}/menu`);
 }
+
+export async function excluirItem(id) {
+  const token = localStorage.getItem("token");
+
+  const resposta = await fetch(`${API_URL}/menu/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
+  });
+
+  return resposta;
+}

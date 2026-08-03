@@ -1,4 +1,5 @@
 //Gera Card para exibição de itens no cardápio, caso a flag admin seja true, exibe os botões de ação
+import { excluirItem } from "./api.js";
 
 export function criarCard(item, admin){
   const card = document.createElement("article");
@@ -33,6 +34,16 @@ export function criarCard(item, admin){
     excluir.classList.add("ei_remover");
     excluir.textContent = "Remover";
     editar.href = "editar-item.html"
+
+    excluir.addEventListener("click", async () => {
+      const resposta = await excluirItem(item.id);
+
+      if (resposta.ok) {
+          card.remove(); 
+      } else {
+          alert("Erro ao excluir o item.");
+      }
+    });
 
     acoes.appendChild(editar);
     acoes.appendChild(excluir);
