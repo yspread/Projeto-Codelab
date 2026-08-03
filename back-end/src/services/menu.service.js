@@ -44,12 +44,12 @@ async function criarItem(item) {
 
 async function deletarItem(id){
   const menu = await lerMenu();
-  const item = await buscarPorId(id);
-
+  const item = await buscarPorId(id);  
   if(!item){
     return false;
   }
 
+  await fs.unlink(`./src/uploads/${item.imagem}`);
   const novoMenu = menu.filter(item => item.id !== id);
   await salvarMenu(novoMenu);
 
