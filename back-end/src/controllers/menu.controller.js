@@ -10,6 +10,7 @@
 */
 
 const menuService = require("../services/menu.service");
+const fs = require("fs/promises");
 
 async function listarCardapio (req, res){
   const menu = await menuService.lerMenu();
@@ -64,9 +65,23 @@ async function deletar(req, res) {
 
 async function editar(req, res) {
   const id = Number(req.params.id);
-  const novosDados = req.body;
+  let novoItem
+  if(req.files != null){
+    const item = await menuService.buscarPorId(id);
+    await fs.unlink(`./src/uploads/${item.imagem}`);
+
+    const imagem = req.files.imagem;
+    const nomeImagem = Date.now() + "-" + imagem.name;
+    await imagem.mv(`./src/uploads/${nomeImagem}`);
+    novoItem = {
+      ...req.body,
+      imagem: nomeImagem
+    }
+  } else{
+    novoItem = req.body;
+  }
   
-  const itemEditado = await menuService.editarItem(id, novosDados);
+  const itemEditado = await menuService.editarItem(id, novoItem);
 
   if(!itemEditado){
     return res.status(404).json({

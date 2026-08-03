@@ -28,12 +28,12 @@ export function criarCard(item, admin){
 
     const editar = document.createElement("a");
     editar.classList.add("ei_editar");
-    editar.textContent = "Editar"
+    editar.textContent = "Editar";
+    editar.href = `editar-item.html?id=${item.id}`;
 
     const excluir = document.createElement("button");
     excluir.classList.add("ei_remover");
     excluir.textContent = "Remover";
-    editar.href = "editar-item.html"
 
     excluir.addEventListener("click", async () => {
       const resposta = await excluirItem(item.id);

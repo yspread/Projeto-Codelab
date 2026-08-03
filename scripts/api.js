@@ -45,6 +45,10 @@ export async function buscaMenu() {
   return fetch(`${API_URL}/menu`);
 }
 
+export async function buscaItem(id) {
+  return fetch(`${API_URL}/menu/${id}`);
+}
+
 export async function excluirItem(id) {
   const token = localStorage.getItem("token");
 
@@ -55,5 +59,20 @@ export async function excluirItem(id) {
     },
   });
 
+  return resposta;
+}
+
+export async function editarItem(id, dados) {
+  const token = localStorage.getItem("token");
+
+  const resposta = await fetch(`${API_URL}/menu/${id}`,{
+    method: "PUT",
+
+    headers:{
+      "Authorization": `Bearer ${token}`
+    },
+    
+    body: dados
+  });
   return resposta;
 }
