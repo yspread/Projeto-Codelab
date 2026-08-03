@@ -35,9 +35,15 @@ header{
     gap: 16px;
 }
 
-.flex-item{
-    flex: 0 0 auto;   
-    width: 300px;
+.flex-item {
+    width: auto;
+}
+.center-item {
+    justify-self: center;
+}
+
+.right-item {
+    justify-self: end;
 }
 
 button, .voltar{
@@ -474,4 +480,12 @@ body{
 .ei_remover:hover {
     color: white;
     background-color: rgb(208, 42, 42);
+}
+
+.cozinha_header {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
 }
