@@ -1,5 +1,6 @@
 //Gera Card para exibição de itens no cardápio, caso a flag admin seja true, exibe os botões de ação
 import { excluirItem } from "./api.js";
+import { adicionarItem } from "./carrinho.js";
 
 export function criarCard(item, admin){
   const card = document.createElement("article");
@@ -21,11 +22,10 @@ export function criarCard(item, admin){
       <p class="ei_preco">R$ ${Number(item.preco).toFixed(2)}</p>
     </div>
   `
+  const acoes = document.createElement("div");
+  acoes.classList.add("ei_card_acoes");
 
   if(admin === true){
-    const acoes = document.createElement("div");
-    acoes.classList.add("ei_card_acoes");
-
     const editar = document.createElement("a");
     editar.classList.add("ei_editar");
     editar.textContent = "Editar";
@@ -47,9 +47,16 @@ export function criarCard(item, admin){
 
     acoes.appendChild(editar);
     acoes.appendChild(excluir);
+  } else{
+    const carrinho = document.createElement("button");
+    carrinho.classList.add("ei_carrinho");
+    carrinho.textContent = "Adicionar ao pedido"
 
-    card.appendChild(acoes);
+    carrinho.addEventListener("click", async () => await adicionarItem(item));
+    
+    acoes.appendChild(carrinho);
   }
-
+  
+  card.appendChild(acoes);
   return card;
 }
