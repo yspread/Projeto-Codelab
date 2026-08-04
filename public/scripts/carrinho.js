@@ -1,27 +1,31 @@
-function obterCarrinho(){
+import { enviaPedido } from "./api.js";
+
+function obterCarrinho() {
   const carrinho = localStorage.getItem("carrinho");
 
-  if(!carrinho){
+  if (!carrinho) {
     return [];
-  } else{
-    return JSON.parse(carrinho);
   }
+
+  return JSON.parse(carrinho);
 }
 
-function salvarCarrinho(carrinho){
+function salvarCarrinho(carrinho) {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
-export function adicionarItem(item){
+export function adicionarItem(item) {
   const carrinho = obterCarrinho();
 
-  const itemExistente = carrinho.find(itemCarrinho => itemCarrinho.id === item.id);
+  const itemExistente = carrinho.find(
+    itemCarrinho => itemCarrinho.idItem === item.id
+  );
 
-  if(itemExistente) {
+  if (itemExistente) {
     itemExistente.quantidade++;
-  } else{
+  } else {
     carrinho.push({
-      ...item,
+      idItem: item.id,
       quantidade: 1
     });
   }
@@ -29,36 +33,73 @@ export function adicionarItem(item){
   salvarCarrinho(carrinho);
 }
 
-export function removerItem(id){
+export function removerItem(id) {
   const carrinho = obterCarrinho();
 
-  const novoCarrinho = carrinho.filter(item => item.id !== id);
+  const novoCarrinho = carrinho.filter(
+    item => item.idItem !== id
+  );
+
   salvarCarrinho(novoCarrinho);
 }
 
-export function aumentarQuantidade(id){
+export function aumentarQuantidade(id) {
   const carrinho = obterCarrinho();
 
-  const item = carrinho.find(item => item.id === id);
-  if(item){
+  const item = carrinho.find(
+    item => item.idItem === id
+  );
+
+  if (item) {
     item.quantidade++;
+    salvarCarrinho(carrinho);
+  }
+}
+
+export function diminuirQuantidade(id) {
+  const carrinho = obterCarrinho();
+
+  const item = carrinho.find(
+    item => item.idItem === id
+  );
+
+  if (!item) {
+    return;
+  }
+
+  item.quantidade--;
+
+  if (item.quantidade <= 0) {
+    removerItem(id);
+    return;
   }
 
   salvarCarrinho(carrinho);
 }
 
-export function diminuirQuantidade(id){
+export async function finalizarCarrinho(mesa) {
   const carrinho = obterCarrinho();
 
-  const item = carrinho.find(item => item.id === id);
-
-  if(item){
-    item.quantidade--;
+  if (carrinho.length === 0) {
+    alert("O carrinho está vazio!");
+    return;
   }
 
-  if(item.quantidade <= 0){
-    removerItem(id);
+  for (const item of carrinho) {
+    const pedido = {
+      idItem: item.idItem,
+      quantidade: item.quantidade,
+      mesa: mesa
+    };
+
+    const resposta = await enviaPedido(pedido);
+
+    if (!resposta.ok) {
+      alert("Erro ao enviar o pedido.");
+      return;
+    }
   }
 
-  salvarCarrinho(carrinho);
+  localStorage.removeItem("carrinho");
+  alert("Pedido realizado com sucesso!");
 }

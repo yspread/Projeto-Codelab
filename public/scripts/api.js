@@ -76,3 +76,17 @@ export async function editarItem(id, dados) {
   });
   return resposta;
 }
+
+export async function enviaPedido(item) {
+  const resposta = await fetch(`${API_URL}/pedidos`, {
+    method: "POST",
+
+    headers:{
+      "Content-Type":"application/json",
+    },
+    
+    body: JSON.stringify(item)
+  });
+
+  return resposta;
+}
