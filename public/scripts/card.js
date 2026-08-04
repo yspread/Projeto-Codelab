@@ -36,12 +36,17 @@ export function criarCard(item, admin){
     excluir.textContent = "Remover";
 
     excluir.addEventListener("click", async () => {
-      const resposta = await excluirItem(item.id);
+      const confirmar = confirm("Tem certeza que deseja remover este item?");
 
-      if (resposta.ok) {
-          card.remove(); 
-      } else {
-          alert("Erro ao excluir o item.");
+      if (!confirmar) return;
+      else{
+        const resposta = await excluirItem(item.id);
+
+        if (resposta.ok) {
+            card.remove(); 
+        } else {
+            alert("Erro ao excluir o item.");
+        }
       }
     });
 
