@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carrinho</title>
+    <link rel="icon" type="image/png" href="../imgs/chingchong.jpeg" />
+    <link rel="stylesheet" href="menu.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Germania One"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+            <div class="cozinha_header">
+                <div class="flex-item">
+                    <img id="logo" src="../imgs/chingchong.jpeg">
+                    <h1> CHING CHONG SUSHI</h1>
+                </div>
+                <div class="flex-item center-item">
+                    <h2 id="cozinha"> ~Carrinho~ </h2>
+                </div>
+                <div class="flex-item right-item">
+                    <a class="voltar" href="index.html"> Cardápio </a>
+                </div>
+            </div>
+    </header>
+    <hr>
+    <main class="ei_main">
+        <h1 id="pedidos-recebidos">Pedido - Mesa 8</h1>
+
+        <article class="ei_card">
+            <div class="ei_card_imagem">
+                <img src="../imgs/temaki.jpeg" alt="Temaki">
+            </div>
+
+            <div class="ei_card_informacoes">
+                <h2 class="item_pedido">Temaki</h2>
+                <p class="ei_preco">R$ 24,90</p>
+            </div>
+
+            <div class="carrinho_controles">
+                <p>Quantidade</p>
+
+                <div class="carrinho_quantidade">
+                    <button type="button">−</button>
+                    <span>10</span>
+                    <button type="button">+</button>
+                </div>
+
+                <button type="button" class="carrinho_remover">
+                    Remover
+                </button>
+            </div>
+
+            <div class="carrinho_subtotal">
+                <p>Subtotal</p>
+                <strong>R$ 249,00</strong>
+            </div>
+        </article>
+
+        <!-- eh a soma de todos os pedidos -->
+        <div class="carrinho_final">
+            <p>Total: <strong>R$ 249,00</strong></p>
+
+            <button type="button" class="carrinho_enviar">
+                Enviar pedido
+            </button>
+        </div>
+    </main>
+  </body>
+</html>
