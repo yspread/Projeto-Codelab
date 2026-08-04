@@ -8,7 +8,7 @@ export function criarCard(item, admin){
 
   card.innerHTML = `
     <div class="ei_card_imagem">
-      <img src="../back-end/src/uploads/${item.imagem}" alt="${item.nome}">
+      <img src="/uploads/${item.imagem}" alt="${item.nome}">
     </div>
 
     <div class="ei_card_informacoes">

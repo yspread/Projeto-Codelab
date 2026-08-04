@@ -21,7 +21,7 @@ async function carregarItem() {
   document.getElementById("descricao").value = item.descricao;
   document.getElementById("preco").value = item.preco;
   document.getElementById("categoria").value = item.categoria;
-  document.getElementById("img-atual").src = `../back-end/src/uploads/${item.imagem}`
+  document.getElementById("img-atual").src = `/uploads/${item.imagem}`
 }
 
 async function editItem(event) {

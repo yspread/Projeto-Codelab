@@ -11,12 +11,12 @@
 const fs = require("fs/promises");
 
 async function lerMenu() {
-  const dados = await fs.readFile("./src/database/menu.json", "utf-8");
+  const dados = await fs.readFile("./back-end/database/menu.json", "utf-8");
   return JSON.parse(dados);
 }
 
 async function salvarMenu(menu){
-  await fs.writeFile("./src/database/menu.json", JSON.stringify(menu, null, 2))
+  await fs.writeFile("./back-end/database/menu.json", JSON.stringify(menu, null, 2))
 }
 
 async function buscarPorId(id) {
@@ -49,7 +49,7 @@ async function deletarItem(id){
     return false;
   }
 
-  await fs.unlink(`./src/uploads/${item.imagem}`);
+  await fs.unlink(`./back-end/uploads/${item.imagem}`);
   const novoMenu = menu.filter(item => item.id !== id);
   await salvarMenu(novoMenu);
 

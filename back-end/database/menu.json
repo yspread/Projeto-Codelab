@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "nome": "Yakisoba Carne",
+    "descricao": "Yakisoba de Carne",
+    "preco": "32.5",
+    "categoria": "fritos",
+    "imagem": "1785802080609-yakisoba.jpeg"
+  },
+  {
+    "id": 1,
+    "nome": "Temaki de Salmão",
+    "descricao": "feito de salmão",
+    "preco": "32",
+    "categoria": "temakis",
+    "imagem": "1785801970313-temaki.jpeg"
+  }
+]

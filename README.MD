@@ -1,156 +1,153 @@
-# 🍣 Ching Chong Sushi - Sistema de Gerenciamento de Cardápio
+# 🍣 Ching Chong Sushi
 
-Sistema web para gerenciamento e visualização de cardápio desenvolvido como projeto full stack.
+Sistema web full stack para gerenciamento de cardápio de um restaurante japonês.
 
-O projeto possui uma área pública para exibição dos produtos e um painel administrativo para gerenciamento dos itens do cardápio.
-
----
-
-# 🚀 Funcionalidades
-
-## Área pública
-
-* Visualização do cardápio
-* Exibição dos produtos com:
-
-  * Nome
-  * Descrição
-  * Categoria
-  * Preço
-  * Imagem
-
-## Painel administrativo
-
-* Login administrativo
-* Proteção das rotas administrativas
-* Cadastro de itens
-* Edição de itens
-* Remoção de itens
-* Upload de imagens
+O projeto possui uma área pública para visualização do cardápio e um painel administrativo protegido por autenticação, permitindo o gerenciamento completo dos produtos.
 
 ---
 
-# 🛠️ Tecnologias utilizadas
+# 📸 Funcionalidades
+
+## Área Pública
+
+- Visualização do cardápio
+- Listagem dos produtos por categoria
+- Exibição de:
+  - Nome
+  - Descrição
+  - Preço
+  - Categoria
+  - Imagem
+
+## Painel Administrativo
+
+- Login administrativo
+- Autenticação por token
+- Cadastro de produtos
+- Edição de produtos
+- Remoção de produtos
+- Upload de imagens
+- Gerenciamento dos pedidos
+
+---
+
+# 🛠️ Tecnologias
 
 ## Front-end
 
-* HTML5
-* CSS3
-* JavaScript
-* Fetch API
-* ES Modules
+- HTML5
+- CSS3
+- JavaScript (ES Modules)
+- Fetch API
 
 ## Back-end
 
-* Node.js
-* Express
-* CORS
-* Express File Upload
-* API REST
-* Banco de dados local em JSON
+- Node.js
+- Express
+- express-fileupload
+- CORS
+
+## Banco de Dados
+
+- JSON local
 
 ---
 
-# 📂 Estrutura do projeto
+# 📁 Estrutura do Projeto
 
-```
+```text
 Projeto-Codelab
 │
-├── imgs
-│   └── imagens utilizadas no frontend
+├── public
+│   ├── imgs
+│   ├── scripts
+│   │   ├── additem.js
+│   │   ├── api.js
+│   │   ├── auth.js
+│   │   ├── card.js
+│   │   ├── carrinho.js
+│   │   ├── editItem.js
+│   │   ├── index.js
+│   │   ├── listarItens.js
+│   │   ├── login.js
+│   │   ├── logout.js
+│   │   └── painel.js
+│   │
+│   ├── additem.html
+│   ├── editar-item.html
+│   ├── gerenciaritem.html
+│   ├── index.html
+│   ├── login.html
+│   ├── menu.css
+│   ├── paineladm.html
+│   └── pedidosrecebidos.html
 │
 ├── src
+│   ├── controllers
+│   │   ├── auth.controller.js
+│   │   ├── menu.controller.js
+│   │   └── pedidos.controller.js
 │   │
-│   ├── menu.html
-│   ├── paineladm.html
-│   ├── gerenciaritem.html
-│   ├── editar-item.html
-│   ├── additem.html
-│   ├── login.html
-│   └── menu.css
-├── scripts
-│   ├── additem.js
-│   ├── api.js
-│   ├── auth.js
-│   ├── card.js
-│   ├── listarItens.js
-│   ├── login.js
-│   └── painel.js
+│   ├── database
+│   │   ├── menu.json
+│   │   └── pedidos.json
+│   │
+│   ├── middlewares
+│   │   └── auth.middleware.js
+│   │
+│   ├── routes
+│   │   ├── auth.routes.js
+│   │   ├── menu.routes.js
+│   │   └── pedidos.routes.js
+│   │
+│   ├── services
+│   │   ├── auth.service.js
+│   │   ├── menu.service.js
+│   │   └── pedidos.service.js
+│   │
+│   └── uploads
 │
-│   
-│
-└── back-end
-    │
-    ├── src
-    │   │
-    │   ├── controllers
-    │   │   └── menu.controller.js
-    │   │   └── auth.controller.js
-    │   │
-    │   ├── routes
-    │   │   ├── menu.routes.js
-    │   │   └── auth.routes.js
-    │   │
-    │   ├── services
-    │   │   └── menu.service.js
-    │   │   └── auth.service.js
-    │   │
-    │   ├── middlewares
-    │   │   └── auth.middleware.js
-    │   │
-    │   ├── database
-    │   │   └── menu.json
-    │   │
-    │   └── uploads
-    │       └── imagens dos produtos
-    │
-    └── server.js
+├── server.js
+├── package.json
+└── README.md
 ```
 
 ---
 
-# ⚙️ Instalação
+# 🚀 Como executar
 
 ## Requisitos
 
-* Node.js
-* npm
+- Node.js 18+
+- npm
 
 ---
 
 ## Clonar o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/Projeto-Codelab.git
+git clone https://github.com/yspread/Projeto-Codelab.git
 ```
 
----
-
-## Instalar dependências
-
-Acesse o backend:
+Entre na pasta:
 
 ```bash
-cd back-end
+cd Projeto-Codelab
 ```
 
-Instale os pacotes:
+Instale as dependências:
 
 ```bash
 npm install
 ```
 
----
-
-# ▶️ Executando o projeto
-
-Inicie o servidor:
+Execute o servidor:
 
 ```bash
-node src/server.js
+node server.js
 ```
 
-O servidor ficará disponível em:
+O sistema ficará disponível em:
 
 ```
 http://localhost:3000
@@ -158,33 +155,48 @@ http://localhost:3000
 
 ---
 
-# 🔌 API
+# 🌐 Rotas
 
-## Cardápio
+## Front-end
 
-### Listar itens
+| Página | URL |
+|---------|-----|
+| Cardápio | `/` |
+| Login | `/login.html` |
+| Painel Administrativo | `/paineladm.html` |
+| Adicionar Item | `/additem.html` |
+| Gerenciar Itens | `/gerenciaritem.html` |
+| Editar Item | `/editar-item.html?id=` |
 
-```
+---
+
+## API
+
+### Cardápio
+
+```http
 GET /menu
 ```
 
+Lista todos os produtos.
+
 ---
 
-### Buscar item por ID
-
-```
+```http
 GET /menu/:id
 ```
 
+Busca um produto pelo ID.
+
 ---
 
-### Criar item
-
-```
+```http
 POST /menu
 ```
 
-Formato:
+Cria um novo produto.
+
+Tipo:
 
 ```
 multipart/form-data
@@ -202,56 +214,104 @@ imagem
 
 ---
 
-### Editar item
-
-```
+```http
 PUT /menu/:id
 ```
 
+Atualiza um produto existente.
+
 ---
 
-### Remover item
-
-```
+```http
 DELETE /menu/:id
+```
+
+Remove um produto.
+
+---
+
+### Autenticação
+
+```http
+POST /auth/login
+```
+
+Realiza o login do administrador.
+
+---
+
+```http
+GET /auth/verificar
+```
+
+Verifica se o token é válido.
+
+---
+
+### Pedidos
+
+```http
+GET /pedidos
+```
+
+Lista todos os pedidos.
+
+---
+
+```http
+POST /pedidos
+```
+
+Cria um novo pedido.
+
+Exemplo:
+
+```json
+{
+    "idItem": 8,
+    "quantidade": 2,
+    "mesa": 4
+}
 ```
 
 ---
 
 # 🔐 Autenticação
 
-O painel administrativo utiliza autenticação por token.
+O painel administrativo é protegido por token.
 
 Fluxo:
 
-```
+```text
 Login
-  ↓
+      │
+      ▼
 Validação das credenciais
-  ↓
-Geração do token
-  ↓
-Armazenamento no navegador
-  ↓
-Acesso ao painel administrativo
+      │
+      ▼
+Geração do Token
+      │
+      ▼
+LocalStorage
+      │
+      ▼
+Acesso às rotas administrativas
 ```
-
-As rotas administrativas possuem proteção através de middleware.
 
 ---
 
-# 🖼️ Upload de imagens
+# 🖼️ Upload de Imagens
 
-As imagens enviadas pelo administrador são armazenadas em:
-
-```
-back-end/src/uploads
-```
-
-Elas ficam disponíveis através da rota:
+As imagens enviadas são armazenadas em:
 
 ```
-/uploads/nome-da-imagem
+back-end/uploads
+```
+
+Elas ficam disponíveis através da rota pública:
+
+```
+/uploads/<nome-da-imagem>
 ```
 
 Exemplo:
@@ -262,82 +322,65 @@ http://localhost:3000/uploads/temaki.jpeg
 
 ---
 
-# 🗃️ Banco de dados
+# 🗃️ Banco de Dados
 
-O projeto utiliza um arquivo JSON como armazenamento local.
+O projeto utiliza arquivos JSON para armazenamento local.
 
-Exemplo:
+- `menu.json`
+- `pedidos.json`
+
+Exemplo de item:
 
 ```json
-[
-  {
+{
     "id": 1,
     "nome": "Temaki de Salmão",
-    "descricao": "Temaki preparado com salmão fresco",
-    "preco": 35,
-    "categoria": "temaki",
-    "imagem": "temaki.jpeg"
-  }
-]
+    "descricao": "Temaki preparado com salmão fresco.",
+    "preco": 32.90,
+    "categoria": "temakis",
+    "imagem": "1758845300123-temaki.jpeg"
+}
 ```
 
 ---
 
-# 🏗️ Arquitetura do Backend
+# 🏛️ Arquitetura
 
-O backend segue uma arquitetura separada por responsabilidades.
+O backend segue uma arquitetura em camadas.
 
-## Routes
+### Routes
 
-Responsáveis pelos endpoints da API.
+Define os endpoints da aplicação.
 
-Exemplo:
+### Controllers
 
-```
-POST /menu
-```
+Recebem as requisições HTTP e retornam as respostas.
 
----
+### Services
 
-## Controllers
+Contêm a lógica de negócio e manipulam os dados.
 
-Responsáveis por:
+### Middlewares
 
-* Receber requisições HTTP
-* Validar dados
-* Retornar respostas
+Responsáveis por funcionalidades compartilhadas, como autenticação.
 
----
+### Database
 
-## Services
-
-Responsáveis pela lógica da aplicação:
-
-* Leitura do JSON
-* Escrita no JSON
-* Criação
-* Atualização
-* Busca
-* Remoção
+Persistência utilizando arquivos JSON.
 
 ---
 
-## Middlewares
+# 👨‍💻 Autores
 
-Responsáveis por funcionalidades intermediárias:
+**Giovanni Makauli**
+**Giovanna Maruyama**
+**Henrique Sanchez**
+**Rafael  Diesner**
 
-* Autenticação
-* Upload de arquivos
-* Controle das requisições
-
----
-
-# 👨‍💻 Projeto
-
-Desenvolvido para ingresso no grupo de extensão CodeLab com objetivo de aplicar conceitos de desenvolvimento web.
+Projeto desenvolvido para o processo seletivo do grupo de extensão **CodeLab**, aplicando conceitos de desenvolvimento web full stack com Node.js, Express e JavaScript.
 
 ---
 
 # 📄 Licença
 
-Projeto desenvolvido para fins acadêmicos.
+Projeto desenvolvido exclusivamente para fins acadêmicos.

@@ -39,7 +39,7 @@ async function criar(req, res) {
 
   const nomeImagem = Date.now() + "-" + imagem.name;
 
-  await imagem.mv(`./src/uploads/${nomeImagem}`);
+  await imagem.mv(`./back-end/uploads/${nomeImagem}`);
 
   const novoItem = {
     ...req.body,
@@ -68,11 +68,11 @@ async function editar(req, res) {
   let novoItem
   if(req.files != null){
     const item = await menuService.buscarPorId(id);
-    await fs.unlink(`./src/uploads/${item.imagem}`);
+    await fs.unlink(`./back-end/uploads/${item.imagem}`);
 
     const imagem = req.files.imagem;
     const nomeImagem = Date.now() + "-" + imagem.name;
-    await imagem.mv(`./src/uploads/${nomeImagem}`);
+    await imagem.mv(`./back-end/uploads/${nomeImagem}`);
     novoItem = {
       ...req.body,
       imagem: nomeImagem

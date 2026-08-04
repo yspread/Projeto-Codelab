@@ -9,9 +9,9 @@ const cors = require("cors")
 const path = require("path");
 const express = require("express");
 const fileupload = require("express-fileupload");
-const menuRoutes = require("./routes/menu.routes");
-const authRoutes = require("./routes/auth.routes");
-const pedidosRoutes = require("./routes/pedidos.routes")
+const menuRoutes = require("./back-end/routes/menu.routes");
+const authRoutes = require("./back-end/routes/auth.routes");
+const pedidosRoutes = require("./back-end/routes/pedidos.routes")
 
 const app = express();
 
@@ -19,7 +19,8 @@ const app = express();
 app.use(cors()); //Limitar o acesso para o front(futuro)
 app.use(express.json());
 app.use(fileupload());
-app.use("/uploads", express.static("./src/uploads"));
+app.use("/uploads", express.static("./back-end/uploads"));
+app.use("/", express.static("./public"));
 
 //Rotas
 app.use("/menu", menuRoutes);

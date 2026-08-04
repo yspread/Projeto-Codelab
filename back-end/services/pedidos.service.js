@@ -2,12 +2,12 @@ const fs = require("fs/promises");
 
 
 async function lerPedidos() {
-  const dados = await fs.readFile("./src/database/pedidos.json", "utf-8");
+  const dados = await fs.readFile("./back-end/database/pedidos.json", "utf-8");
   return JSON.parse(dados);
 }
 
 async function salvarPedidos(pedidos) {
-  await fs.writeFile("./src/database/pedidos.json", JSON.stringify(pedidos, null, 2));
+  await fs.writeFile("./back-end/database/pedidos.json", JSON.stringify(pedidos, null, 2));
 }
 
 async function buscarPorId(id) {
