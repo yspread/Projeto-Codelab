@@ -8,7 +8,6 @@ const formulario = document.getElementById("form-editar-item");
 formulario.addEventListener("submit", editItem);
 
 async function carregarItem() {
-  console.log("oi");
   const resposta = await buscaItem(id);
 
   if(!resposta.ok){

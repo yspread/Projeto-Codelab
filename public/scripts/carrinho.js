@@ -1,6 +1,6 @@
-import { enviaPedido } from "./api.js";
+import { buscaItem, enviaPedido } from "./api.js";
 
-function obterCarrinho() {
+export function obterCarrinho() {
   const carrinho = localStorage.getItem("carrinho");
 
   if (!carrinho) {
