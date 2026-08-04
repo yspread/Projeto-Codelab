@@ -372,9 +372,9 @@ Persistência utilizando arquivos JSON.
 
 # 👨‍💻 Autores
 
-**Giovanni Bullo, **
-**Giovanna Maruyama, **
-**Henrique Sanchez, **
+**Giovanni Bullo**
+**Giovanna Maruyama**
+**Henrique Sanchez**
 **Rafael  Diesner**
 
 Projeto desenvolvido para o processo seletivo do grupo de extensão **CodeLab**, aplicando conceitos de desenvolvimento web full stack com Node.js, Express e JavaScript.
