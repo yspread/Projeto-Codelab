@@ -86,20 +86,23 @@ export async function finalizarCarrinho(mesa) {
   }
 
   for (const item of carrinho) {
-    const pedido = {
-      idItem: item.idItem,
-      quantidade: item.quantidade,
-      mesa: mesa
-    };
+    const verificaItem = await buscaItem(item.idItem);
+    if(verificaItem.ok){
 
-    const resposta = await enviaPedido(pedido);
+      const pedido = {
+        idItem: item.idItem,
+        quantidade: item.quantidade,
+        mesa: mesa
+      };
 
-    if (!resposta.ok) {
-      alert("Erro ao enviar o pedido.");
-      return;
+      const resposta = await enviaPedido(pedido);
+
+      if (!resposta.ok) {
+        alert("Erro ao enviar o pedido.");
+        return;
+      }
     }
   }
-
   localStorage.removeItem("carrinho");
 
   return true;

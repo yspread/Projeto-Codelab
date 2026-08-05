@@ -19,10 +19,14 @@ if(carrinho.length === 0){
 } else{
   for(const itemCarrinho of carrinho){
     const resposta = await buscaItem(itemCarrinho.idItem);
-    const item = await resposta.json();
+    let item = null;
+
+    if (resposta.ok) {
+      item = await resposta.json();
+      total += itemCarrinho.quantidade * item.preco
+    }
     const card = criarCardCarrinho(item, itemCarrinho.quantidade);
     lista.append(card);
-    total += itemCarrinho.quantidade * item.preco
   }
   document.getElementById("total").textContent = `R$ ${total.toFixed(2)}`;
 
@@ -66,6 +70,15 @@ function criarCardCarrinho(item, quantidade) {
   const card = document.createElement("article");
 
   card.classList.add("ei_card");
+
+  if(!item){
+    card.innerHTML = `
+      <div class="ei_card_informacoes">
+      <h2>Item removido do cardápio!</h2>
+      </div>
+    `
+    return card
+  }
 
   card.innerHTML = `
     <div class="ei_card_imagem">
