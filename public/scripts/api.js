@@ -90,3 +90,27 @@ export async function enviaPedido(item) {
 
   return resposta;
 }
+
+export async function buscaPedidos() {
+  const token = localStorage.getItem("token");
+
+  return fetch(`${API_URL}/pedidos`,{
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization": `Bearer ${token}`
+    },
+  });
+}
+
+export async function finalizaPedido(id) {
+  const token = localStorage.getItem("token");
+
+  const resposta = await fetch(`${API_URL}/pedidos/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
+  });
+
+  return resposta;
+}
