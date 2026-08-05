@@ -11,7 +11,7 @@ import { buscaItem } from "./api.js";
 
 const carrinho = obterCarrinho();
 const lista = document.getElementById("lista-carrinho");
-
+let total = 0;
 if(carrinho.length === 0){
   const p = document.createElement("p");
   p.textContent = "O carrinho está vazio!";
@@ -22,7 +22,15 @@ if(carrinho.length === 0){
     const item = await resposta.json();
     const card = criarCardCarrinho(item, itemCarrinho.quantidade);
     lista.append(card);
+    total += itemCarrinho.quantidade * item.preco
   }
+  document.getElementById("total").textContent = `R$ ${total.toFixed(2)}`;
+
+  const botaoEnviar = document.getElementById("enviar");
+  botaoEnviar.addEventListener("click", async ()  =>{
+    finalizarCarrinho();
+    window.location.reload();
+  })
 } 
 
 function criarCardCarrinho(item, quantidade) {
@@ -57,6 +65,23 @@ function criarCardCarrinho(item, quantidade) {
       <strong>R$ ${(item.preco * quantidade).toFixed(2)}</strong>
     </div>
   `;
+  const botaoMais = card.querySelector(".mais");
+  const botaoMenos = card.querySelector(".menos");
+  const botaoRemover = card.querySelector(".carrinho_remover");
 
+  botaoMais.addEventListener("click", () => {
+    aumentarQuantidade(item.id);
+    window.location.reload();
+  })
+
+  botaoMenos.addEventListener("click", () => {
+    diminuirQuantidade(item.id);
+    window.location.reload();
+  });
+
+  botaoRemover.addEventListener("click", () => {
+    removerItem(item.id);
+    window.location.reload();
+  })
   return card;
 }
