@@ -40,7 +40,7 @@ if(carrinho.length === 0){
 
     if (!resultado.isConfirmed) return;
 
-    const sucesso = await finalizarCarrinho();
+    const sucesso = await finalizarCarrinho(8); // Mesa - 8 "PADRÃO"
 
     if (sucesso) {
       await Swal.fire({
