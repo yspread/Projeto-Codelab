@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 2,
+    "idItem": 9,
+    "quantidade": 4,
+    "mesa": 8
+  },
+  {
+    "id": 3,
+    "idItem": 10,
+    "quantidade": 2,
+    "mesa": 8
+  },
+  {
+    "id": 4,
+    "idItem": 4,
+    "quantidade": 1,
+    "mesa": 8
+  },
+  {
+    "id": 5,
+    "idItem": 5,
+    "quantidade": 1,
+    "mesa": 8
+  }
+]
