@@ -34,21 +34,42 @@ export function criarCard(item, admin){
     const excluir = document.createElement("button");
     excluir.classList.add("ei_remover");
     excluir.textContent = "Remover";
-
     excluir.addEventListener("click", async () => {
-      const confirmar = confirm("Tem certeza que deseja remover este item?");
+      const resultado = await Swal.fire({
+        title: "Excluir item?",
+        text: `Deseja realmente excluir "${item.nome}"?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sim, excluir",
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#6c757d"
+      });
 
-      if (!confirmar) return;
-      else{
-        const resposta = await excluirItem(item.id);
-
-        if (resposta.ok) {
-            card.remove(); 
-        } else {
-            alert("Erro ao excluir o item.");
-        }
+      if (!resultado.isConfirmed) {
+        return;
       }
-    });
+
+      const resposta = await excluirItem(item.id);
+
+      if (resposta.ok) {
+        card.remove();
+
+        Swal.fire({
+          title: "Excluído!",
+          text: "O item foi removido com sucesso.",
+          icon: "success",
+          confirmButtonText: "Ok"
+        });
+  } else {
+      Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível excluir o item.",
+        icon: "error",
+        confirmButtonText: "Ok"
+      });
+  }
+});
 
     acoes.appendChild(editar);
     acoes.appendChild(excluir);
@@ -57,7 +78,19 @@ export function criarCard(item, admin){
     carrinho.classList.add("ei_carrinho");
     carrinho.textContent = "Adicionar ao pedido"
 
-    carrinho.addEventListener("click", async () => await adicionarItem(item));
+    carrinho.addEventListener("click", async () => {
+      await adicionarItem(item);
+
+      Swal.fire({
+        title: "Adicionado!",
+        text: `${item.nome} foi adicionado ao pedido.`,
+        icon: "success",
+        timer: 1200,
+        showConfirmButton: false,
+        toast: true,
+        position: "top-end"
+      });
+});
     
     acoes.appendChild(carrinho);
   }

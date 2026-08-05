@@ -39,12 +39,22 @@ async function cadastrarItem(event) {
   );
 
   const resposta = await criarItem(formData);
-
-  if(!resposta.ok){
-    alert("Erro ao cadastrar item.");
-    return;
+  if (!resposta.ok) {
+    Swal.fire({
+      title: "Erro!",
+      text: "Não foi possível cadastrar o item.",
+      icon: "error",
+      confirmButtonText: "Ok"
+    });
+      return;
   }
-  alert("Item cadastrado com sucesso!");
+
+  await Swal.fire({
+    title: "Sucesso!",
+    text: "Item cadastrado com sucesso.",
+    icon: "success",
+    confirmButtonText: "Ok"
+  });
   formulario.reset();
 
 }

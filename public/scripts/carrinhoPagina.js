@@ -27,10 +27,39 @@ if(carrinho.length === 0){
   document.getElementById("total").textContent = `R$ ${total.toFixed(2)}`;
 
   const botaoEnviar = document.getElementById("enviar");
-  botaoEnviar.addEventListener("click", async ()  =>{
-    finalizarCarrinho();
-    window.location.reload();
-  })
+  botaoEnviar.addEventListener("click", async () => {
+
+    const resultado = await Swal.fire({
+      title: "Enviar pedido?",
+      text: "Seu pedido será enviado para a cozinha.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Enviar",
+      cancelButtonText: "Cancelar"
+    });
+
+    if (!resultado.isConfirmed) return;
+
+    const sucesso = await finalizarCarrinho();
+
+    if (sucesso) {
+      await Swal.fire({
+        title: "Pedido enviado!",
+        text: "A cozinha já recebeu seu pedido.",
+        icon: "success",
+        confirmButtonText: "Ok"
+      });
+
+      window.location.reload();
+    } else {
+      await Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível enviar o pedido.",
+        icon: "error",
+        confirmButtonText: "Ok"
+      });
+    }
+  });
 } 
 
 function criarCardCarrinho(item, quantidade) {
@@ -79,9 +108,21 @@ function criarCardCarrinho(item, quantidade) {
     window.location.reload();
   });
 
-  botaoRemover.addEventListener("click", () => {
+  botaoRemover.addEventListener("click", async () => {
+    const resultado = await Swal.fire({
+      title: "Remover item?",
+      text: `Deseja remover "${item.nome}" do carrinho?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Remover",
+      cancelButtonText: "Cancelar",
+      confirmButtonColor: "#d33"
+    });
+
+    if (!resultado.isConfirmed) return;
+
     removerItem(item.id);
     window.location.reload();
-  })
+  });
   return card;
 }

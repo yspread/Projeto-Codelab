@@ -11,8 +11,14 @@ async function carregarItem() {
   const resposta = await buscaItem(id);
 
   if(!resposta.ok){
-    alert("Item não encontrado!");
+    await Swal.fire({
+      title: "Item não encontrado!",
+      text: "O item solicitado não existe ou foi removido.",
+      icon: "error",
+      confirmButtonText: "Voltar"
+    });
     window.location.replace("gerenciaritem.html");
+    return;
   }
 
   const item = await resposta.json();
@@ -59,9 +65,19 @@ async function editItem(event) {
   const resposta = await editarItem(id, formData);
 
   if(resposta.ok){
-    alert("Item editado!");
+    await Swal.fire({
+      title: "Sucesso!",
+      text: "Item editado com sucesso.",
+      icon: "success",
+      confirmButtonText: "Ok"
+    });
   } else{
-    alert("Erro para editar o item!");
+      await Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível editar o item.",
+        icon: "error",
+        confirmButtonText: "Ok"
+    });
   }
   
   window.location.replace("gerenciaritem.html");

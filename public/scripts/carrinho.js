@@ -82,7 +82,7 @@ export async function finalizarCarrinho(mesa) {
 
   if (carrinho.length === 0) {
     alert("O carrinho está vazio!");
-    return;
+    return false;
   }
 
   for (const item of carrinho) {
@@ -101,5 +101,6 @@ export async function finalizarCarrinho(mesa) {
   }
 
   localStorage.removeItem("carrinho");
-  alert("Pedido realizado com sucesso!");
+
+  return true;
 }

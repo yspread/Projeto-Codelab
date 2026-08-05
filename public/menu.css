@@ -520,3 +520,33 @@ body{
     color: white;
     background-color: rgb(208, 42, 42);
 }
+
+/* SweetAlert fix*/
+.swal2-popup {
+    font-family: Arial, sans-serif !important;
+}
+
+.swal2-title {
+    background: transparent !important;
+    color: #333 !important;
+}
+
+.swal2-html-container {
+    color: #555 !important;
+}
+
+.swal2-confirm {
+    background-color: #7066e0 !important;
+    color: white !important;
+    border: none !important;
+    font-size: 16px !important;
+    font-family: Arial, sans-serif !important;
+}
+
+.swal2-popup p,
+.swal2-popup h1,
+.swal2-popup h2,
+.swal2-popup h3 {
+    background: transparent !important;
+    color: inherit !important;
+}
